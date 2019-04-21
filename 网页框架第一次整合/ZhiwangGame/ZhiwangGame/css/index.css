@@ -1,0 +1,73 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+.start-window {
+  height: 100%;
+  transition: all ease-in-out .8s;
+}
+
+.start-window.out {
+  transform: translateY(-100%) scaleY(0);
+}
+
+.start-window h5,
+.test-window > h5 {
+  text-align: left;
+  padding: 100px 20%;
+  font-size: 20px;
+  font-weight: normal;
+}
+
+.start-window button {
+  margin-left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  padding: 5px 10px;
+}
+
+.test-window {
+  display: none;
+  height: 100%;
+  transition: all ease-in-out .8s;
+}
+
+.test-window > h5 button {
+  padding: 0 5px;
+}
+
+.result {
+  display: none;
+  padding: 0 20%;
+  text-align: center;
+}
+
+.result .icon {
+  font-size: 50px;
+}
+
+.result h5 {
+  display: inline-block;
+  font-size: 20px;
+  font-weight: normal;
+}
+
+.result h5 span {
+  font-weight: bold;
+}
+
+.in {
+  display: block;
+}
+
+select {
+  padding: 5px;
+  box-sizing: border-box;
+  margin: 0 2px;
+}

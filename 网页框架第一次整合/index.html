@@ -1,0 +1,1079 @@
+	<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>text link2</title>
+<link rel="stylesheet" type="text/css" href="style2.css">
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.1.0/d3.js"></script>
+<script src="js2/echarts.min.js"></script>
+ <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.6/ScrollMagic.min.js"></script>
+
+
+</head>
+
+<body>
+<div class="one">
+<h1>你的毕业论文学术影响力有多大?</h1>
+<img src="img/主视觉.jpg" width=100% style="margin:0 auto;" alt=""/>
+<h4>据教育部数据，从2013年开始每年研究生（包括硕士、博士）毕业人数超过50万，并且近几年一直处于上升趋势。研究生是我国重要的精英人才，在一定程度上代表着我国最前沿研究的发展情况。</h4>
+<h4>完成毕业论文是大部分高校研究生获得学位的必须条件，又到一年毕业季，人们只看到了对着天空高高扔起的学位帽，而毕业论文的去向却少有人关心。研究生完成毕业论文答辩，并不意味着毕业论文生命的结束，这些论文将进入茫茫的学术海洋，发挥自己或大或小的作用。</h4>
+	
+<p>4月1日，上午8点，李海龙吃完早饭来到自习室，在两个月来的“老地方”坐下，打开电脑，还是那篇熟悉到不能再熟悉的毕业论文。昨天晚上，导师又给他发了一整面的修改意见。</p>
+	<p>晚上11点，李海龙终于回到宿舍，对论文格式进行了再次调整，确认了没有语病和错别字，第二天他就要把这版定稿发送给导师了。</p>
+	<p>作为中国农业大学农业生态学专业硕士二年级学生，李海龙今年即将毕业。从1月底开始，他就进入了毕业论文写作状态，这样朝八晚十一的生活也已经持续了两个多月。</p>
+	
+	<p>李海龙的毕业论文会有多大的学术影响力呢？</p>
+	<p style="font-size: 12px; color:grey;">说明：一篇论文的引用情况，是它对学术研究的贡献、影响力的重要衡量标准。我们采用文献计量方法，以“中国知网”数据库为统计源。知网是国内目前最权威的学术文献数据库之一，收录了《中国优秀博硕士学位论文全文数据库（CDMD）》以及《中国引文数据库》。《中国优秀硕博士学位论文全文数据库》的收录年限为1984年至今，是目前国内相关资源最完备、高质量、连续动态更新的中国优秀博硕士学位论文全文数据库。我们从知网上抓取了近十年论文的引用和被引用情况进行分析。</p>
+</div>
+
+<div class="two">
+<div class="front" id="wordsone">
+
+<div class="front_container" id="front1">
+
+					<p>从1984年至2018年，知网上总共收录109007112篇论文。</p>
+					<div class="control"></div>
+</div>
+<div class="front_container" id="front2">
+	<p>其中，只有27.3%的论文得到引用。</p>
+</div>
+
+<div class="front_container" id="front4">
+	<p>在所有论文中，研究生毕业论文一共收录了4065271篇，仅占3.7%。</p>
+</div>
+<div class="front_container" id="front5">
+	<p>但毕业论文被引用的比例高达64.1%，远远高于整体水平。</p>
+</div>
+
+
+</div>
+
+<div class="back" id="tu">
+
+</div>
+</div> 
+
+
+<div class="three">
+<h1>这些被引用的毕业论文，都被引到哪里去了呢？</h1>
+	
+	<p>毕业论文的引用去向情况与期刊、会议论文基本相似。被引用的论文中，期刊论文最多，其次是会议论文和毕业论文。由于毕业论文总数较少，所以在所有被引的论文中，毕业论文占比并不高。</P>
+    <div id="sankey1" style="width: 600px;height:400px;"></div>
+    <script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('sankey1'));
+
+        // 指定图表的配置项和数据
+
+        var sourceData = [{
+        name: '期刊',
+        nameValue: 40978133,
+        valueUnit: "篇"
+    },
+    {
+        name: '会议',
+        nameValue: 3914782,
+        valueUnit: "篇"
+    },
+    {
+        name: '学位',
+        nameValue: 335681,
+        valueUnit: "篇"
+    },
+    {
+        name: '核心期刊',
+        nameValue: 10068573,
+        valueUnit: "篇"
+    },
+    {
+        name: 'EI和SCI期刊',
+        nameValue: 2287863,
+        valueUnit: "篇"
+    },
+    {
+        name: '其他期刊',
+        nameValue: 11533850,
+        valueUnit: "篇"
+    },
+    {
+        name: '会议论文',
+        nameValue: 2192428,
+        valueUnit: "篇"
+    },
+    {
+        name: '学位论文',
+        nameValue: 19145882,
+        valueUnit: "篇"
+    }
+];
+var sangjiColor = ['#f4ce92', '#f2b87e', '#C8B083', '#f4ce92', '#f4ce92', '#f4ce92', '#f2b87e', '#C8B083'];
+var itemStyleSource = [];
+for (let d = 0; d < sourceData.length; d++) {
+    sourceData[d].itemStyle = {
+        normal: {
+            color: sangjiColor[d]
+        }
+    }
+    itemStyleSource.push(sourceData[d]);
+}
+
+option = {
+    backgroundColor: "#feefd7",
+    series: [{
+        type: 'sankey',
+        layout: 'none',
+        top: "12%",
+        bottom: '21%',
+        left: '3%',
+        focusNodeAdjacency: 'allEdges',
+        data: itemStyleSource,
+        links: [{
+                source: '期刊',
+                target: '核心期刊',
+                value: 9502106
+            },
+            {
+                source: '期刊',
+                target: 'EI和SCI期刊',
+                value: 2175095
+            },
+            {
+                source: '期刊',
+                target: '其他期刊',
+                value: 10631748
+            },
+            {
+                source: '期刊',
+                target: '会议论文',
+                value: 2081742
+            },
+            {
+                source: '期刊',
+                target: '学位论文',
+                value: 16587442
+            },
+            {
+                source: '会议',
+                target: '核心期刊',
+                value: 531506
+            },
+            {
+                source: '会议',
+                target: 'EI和SCI期刊',
+                value: 106706
+            },
+            {
+                source: '会议',
+                target: '其他期刊',
+                value: 795454
+            },
+            {
+                source: '会议',
+                target: '会议论文',
+                value: 94917
+            },
+            {
+                source: '会议',
+                target: '学位论文',
+                value: 2386199
+            },
+            {
+                source: '学位',
+                target: '核心期刊',
+                value: 34961
+            },
+            {
+                source: '学位',
+                target: 'EI和SCI期刊',
+                value: 6062
+            },
+            {
+                source: '学位',
+                target: '其他期刊',
+                value: 106648
+            },
+            {
+                source: '学位',
+                target: '会议论文',
+                value: 15769
+            },
+            {
+                source: '学位',
+                target: '学位论文',
+                value: 172241
+            }
+        ],
+        label: {
+            normal: {
+                color: "#000",
+                fontSize: 10,
+                formatter: function(params, i) {
+                    console.log(params);
+                    return "{white|" + params.data.name + "}" + params.data.nameValue + " " + params.data.valueUnit;
+                },
+                rich: {
+                    white: {
+                        fontSize: 10,
+                        padding: [0, 0, 0, 0]
+                    }
+                }
+            }
+
+        },
+        lineStyle: {
+            normal: {
+                color: 'source',
+                curveness: 0.5,
+                opacity:0.7
+                }
+        },
+        itemStyle: {
+            normal: {
+                borderWidth: 1,
+                borderColor: 'transparent'
+            }
+        }
+    }]
+}
+
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+    </script>
+
+<div id="sankey2" style="width: 600px;height:400px;"></div>
+    <script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('sankey2'));
+
+        // 指定图表的配置项和数据
+
+       var sourceData = [
+    {
+        name: '学位',
+        nameValue: 335681,
+        valueUnit: "篇"
+    },
+    {
+        name: '核心期刊',
+        nameValue: 10068573,
+        valueUnit: "篇"
+    },
+    {
+        name: 'EI和SCI期刊',
+        nameValue: 2287863,
+        valueUnit: "篇"
+    },
+    {
+        name: '其他期刊',
+        nameValue: 11533850,
+        valueUnit: "篇"
+    },
+    {
+        name: '会议论文',
+        nameValue: 2192428,
+        valueUnit: "篇"
+    },
+    {
+        name: '学位论文',
+        nameValue: 19145882,
+        valueUnit: "篇"
+    }
+];
+var sangjiColor = [ '#C8B083', '#f4ce92', '#f4ce92', '#f4ce92', '#f2b87e', '#C8B083'];
+var itemStyleSource = [];
+for (let d = 0; d < sourceData.length; d++) {
+    sourceData[d].itemStyle = {
+        normal: {
+            color: sangjiColor[d]
+        }
+    }
+    itemStyleSource.push(sourceData[d]);
+}
+
+option = {
+    backgroundColor: "#feefd7",
+    series: [{
+        type: 'sankey',
+        layout: 'none',
+        top: "12%",
+        bottom: '21%',
+        left: '3%',
+        focusNodeAdjacency: 'allEdges',
+        data: itemStyleSource,
+        links: [
+            {
+                source: '学位',
+                target: '核心期刊',
+                value: 34961
+            },
+            {
+                source: '学位',
+                target: 'EI和SCI期刊',
+                value: 6062
+            },
+            {
+                source: '学位',
+                target: '其他期刊',
+                value: 106648
+            },
+            {
+                source: '学位',
+                target: '会议论文',
+                value: 15769
+            },
+            {
+                source: '学位',
+                target: '学位论文',
+                value: 172241
+            }
+        ],
+        label: {
+            normal: {
+                color: "#000",
+                fontSize: 10,
+                formatter: function(params, i) {
+                    console.log(params);
+                    return "{white|" + params.data.name + "}" + params.data.nameValue + " " + params.data.valueUnit;
+                },
+                rich: {
+                    white: {
+                        fontSize: 10,
+                        padding: [0, 0, 0, 0]
+                    }
+                }
+            }
+
+        },
+        lineStyle: {
+            normal: {
+                color: 'source',
+                curveness: 0.5,
+                opacity:0.5
+                }
+        },
+        itemStyle: {
+            normal: {
+                borderWidth: 1,
+                borderColor: 'transparent'
+            }
+        }
+    }]
+}
+
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+    </script>
+    <div id="sankey3" style="width: 600px;height:400px;"></div>
+    <script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('sankey3'));
+
+        // 指定图表的配置项和数据
+
+var sourceData = [
+    {
+        name: '学位',
+        nameValue: 335681,
+        valueUnit: "篇"
+    },
+    {
+        name: '核心期刊',
+        nameValue: 10068573,
+        valueUnit: "篇"
+    },
+    {
+        name: 'EI和SCI期刊',
+        nameValue: 2287863,
+        valueUnit: "篇"
+    },
+    {
+        name: '其他期刊',
+        nameValue: 11533850,
+        valueUnit: "篇"
+    },
+    {
+        name: '会议论文',
+        nameValue: 2192428,
+        valueUnit: "篇"
+    },
+    {
+        name: '学位论文',
+        nameValue: 19145882,
+        valueUnit: "篇"
+    }
+];
+var sangjiColor = [ '#C8B083','#d24a4a', '#f4ce92', '#f4ce92', '#f2b87e', '#C8B083'];
+var itemStyleSource = [];
+for (let d = 0; d < sourceData.length; d++) {
+    sourceData[d].itemStyle = {
+        normal: {
+            color: sangjiColor[d]
+        }
+    }
+    itemStyleSource.push(sourceData[d]);
+}
+
+option = {
+    backgroundColor: "#feefd7",
+    series: [{
+        type: 'sankey',
+        layout: 'none',
+        top: "12%",
+        bottom: '21%',
+        left: '3%',
+        focusNodeAdjacency: 'allEdges',
+        data: itemStyleSource,
+        links: [
+            {
+                source: '学位',
+                target: '核心期刊',
+                value: 34961
+            },
+            {
+                source: '学位',
+                target: 'EI和SCI期刊',
+                value: 6062
+            },
+            {
+                source: '学位',
+                target: '其他期刊',
+                value: 106648
+            },
+            {
+                source: '学位',
+                target: '会议论文',
+                value: 15769
+            },
+            {
+                source: '学位',
+                target: '学位论文',
+                value: 172241
+            }
+        ],
+        label: {
+            normal: {
+                color: "#000",
+                fontSize: 10,
+                formatter: function(params, i) {
+                    console.log(params);
+                    return "{white|" + params.data.name + "}" + params.data.nameValue + " " + params.data.valueUnit;
+                },
+                rich: {
+                    white: {
+                        fontSize: 10,
+                        padding: [0, 0, 0, 0]
+                    }
+                }
+            }
+
+        },
+        lineStyle: {
+            normal: {
+                color: 'source',
+                curveness: 0.5,
+                opacity:0.5
+                }
+        },
+        itemStyle: {
+            normal: {
+                borderWidth: 1,
+                borderColor: 'transparent'
+            }
+        }
+    }]
+}
+
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+    </script>
+
+</div>
+
+<div class="four">
+<div class="front" id="wordsfour">
+
+<div class="front_container" id="front6">
+	<p>核心期刊是能够代表专业学科发展水平的专业期刊，被核心期刊引用的情况可以衡量一篇论文的学术贡献。从2009年到2018年，在核心期刊引用的所有文献中，毕业论文的占比逐渐上升，但始终小于4%，远远小于一般期刊的引用占比。</p>
+<div class="control2"></div>
+</div>
+<div class="front_container" id="front7">
+	<p>2009年至2018年，知网收录的硕博论文总量不足期刊的十分之一，这对占比有很大影响，比较毕业论文和期刊论文的被引用概率，会呈现不一样的结果。</p>
+</div>
+
+
+</div>
+
+<div class="back" id="tu2">
+
+</div>
+</div> 
+
+
+<div class="five">
+<h1>03 硕博毕业论文有保质期吗？</h1>
+
+	<p>一篇论文从发表到被学界发现，再到被引用参考，其实是需要一定时间的，毕业论文也不例外。</p>
+		<p>那么毕业论文一般在发表之后多久会被引用，又会持续多长时间呢？</p>
+<div class='wrapper'>
+
+      <div class="intro">
+       
+      </div>
+	  </div>
+      <div id="table">
+	   <p>出版年份</p>
+	  </div>
+	  
+	  <div id="tablezhou">
+	  <p>被</p>
+	  <p>引</p>
+	  <p>年</p>
+	  <p>份</p>
+	  </div>
+    </div>
+
+</div>
+<p>期刊论文引用两到四年前的毕业论文量最多，也就是说，一篇毕业论文在发表的两到四年时间内，是学术贡献最大的时间，这之后，贡献就会逐渐变小。论文的“保质期”跟什么有关呢？</p>
+
+<p>中国传媒大学新闻学院刘昶教授，有XX年做硕博导师的经验，他分析说，论文刚发表的时候有消化期，要慢慢被大家知道才会被引用。而论文的生命周期则跟选题有关，一些人文社科类的毕业论文会追热点，但当热点过去，论文的参考价值自然就会下降。比如传媒领域两三年前热门的“直播”，当时相关论文的被引次数很高，但热度消退之后，就不会有那么高的被引了。</p>
+
+<p>除了选题的热点性，创新性也是影响论文引用生命期的一大因素。扬州大学园艺与植物保护学院教授、博士生导师陈学好解释道，“如果你创新点特别好，你研究解决的问题对整个行业、学术圈影响比较大，大家再做相关的研究的时候就会引用你的论文。” 但当新的问题被彻底解决以后，相关论文的价值就会减弱。当然科技日新月异，新的问题不断出现，等待后人解决。</p>
+
+<div class="six">
+
+<img src="img/2.gif" width="20%" style="margin: 0 auto;"/>	
+<h1>04 各学科被引情况对比</h1>
+	
+	<p> 无论是什么类型的学科，毕业论文写作过程都不是一帆风顺的。农学的李海龙在毕业论文写作时经历过一次巨大的崩溃，他的实验数据与自己的假设有一半都是相反的。由于所在学校的研究条件有限，无法做更加深入的研究，他几度觉得自己要延毕了，只能疯狂寻求老师和学长的帮助。</p>
+	<p>复旦大学预防医学的研三学生陈想想，刚刚交上了毕业论文初稿。正式动笔写作从去年年底就开始了，但前期的预实验就做了三四个月。实验的结果并不是很好，她只能不断推翻，不断修改，甚至要回到最开始的文献综述去寻找问题所在，往往在实验室一待就是一天。</p>
+<p>而对于新闻传播专业的黄若鸿来说，印象最深刻的莫过于公布开题结果名单时，不通过的只有包括自己在内的两个人。由于选题比较敏感，可能面临换题，巨大的焦虑和压力包围着自己。</P>
+	<p>不同学科的学生培养模式有一定的差异性，对硕博毕业论文的要求，写作的流程和范式也千差万别，但无论是实验操作还是调查归纳，每篇论文在一定程度上都是学科成果的展现。那么，各学科的研究生毕业论文被引用概率有差距吗？（d3还没有写出来）</p>
+	<img src="img/5.png" width="50%"/>
+<p>十年来，八大学科的毕业论文被引用概率都呈现上升趋势，与论文的整体情况一致。农业科技领域的论文引用概率保持领先，医药卫生科技最低，但近些年的上升趋势在加快。（静态图还没有做好）</p>
+<img src="img/6.png" width="30%"/>
+<p>值得注意的是，2018年农业科技论文的被引用篇数排在倒数第二位，但被引用概率却遥遥领先，高达67%。医药卫生科技毕业论文的被引用概率最低，只有31.1%。</p>
+
+<p>学科间的差异是怎么影响到毕业论文的被引用情况的呢？陈学好教授认为，农学科技论文的高被引用概率与该领域的极高创新性有关，毕业论文从选题开始就要创新，以推动学科进步为任务，比起更注重回顾历史、翻阅文献的学科，或许有了更大的被引用可能性。</p>
+<p>而在医学领域，由于国内外医学研究还有一定的差距，大家写作论文的时候一般会从国际上高水平的权威期刊中引用文献。此外，很多医学研究生的毕业论文是求学期间发表在期刊上的论文的汇总，因此被引用的概率会减小。</p>
+</div>
+
+<div class="seven">
+<h1>05 读了博士，我的论文是不是就会被引用的更多？</h1>
+<p>事实的确如此。2017年，我国共有硕士毕业生52万人，博士毕业生5.8万人，大约是硕士的十分之一。3到5年的进修让博士的毕业论文水平与硕士拉开了一定的差距。数据显示，十年来博士的毕业论文被引用概率始终比硕士高。虽然两者的被引用率都在上升，但硕博之间的差距也在逐年扩大。（这里有个bug，点阵图那里清除所有点会把这里的点也去掉，刷新一下才会出现。）</p>
+
+<div id="shuobo"></div>
+
+<p>硕博生毕业论文之间的差距归根到底是硕士、博士之间的差距。很多硕士生会选择毕业之后直接就业，而博士往往抱着从事继续教学研究的打算，因此在对待毕业论文的心态上有所不同。协和医学院博士毕业生刘新农回忆道，他的硕士和博士毕业论文选题不相关，落脚点也不同。但博士论文一定会内容更多、研究技术更熟练、程度上会有加深。</p>
+<p>陈学好教授提到：“博士的要求更高，一是他选择解决的问题难度更大，也特别强调系统性；二是他铺的面会更宽一点，整个论文的立体感跟覆盖度要比硕士要丰满得多。”刘昶教授也分析：“博士生读书多，思考问题更深。相应的，导师在辅导硕士和博士的论文的时候，要求不一样，辅导方式也不一样：硕士生管得比较多，博士生则讨论多指导少，因为博士生已经有独立研究的能力了。”</p>
+<p>当然，除了硕博生自身的原因之外，教育制度也带来一定的影响。刘昶教授补充道，扩招之后，从本科生开始就出现生源质量下滑。教育跟不上扩招的进度，对学生的要求也就不得不降低。</p>
+
+<img src="img/3.gif" width="20%" style="margin: 0 auto;"/>
+
+<p>2017年中国科学技术信息研究所发布的中国科技论文统计结果显示，我国发表科技论文数量跃居世界第二，仅次于美国。但计算篇均被引率时，中国的排名则从发文量第2名，跌至被引率第15名。</p>
+
+<p>科研能力的提高，根本上需要的是人才质量的提高和教育质量的提高。作为国民教育的顶端和国家创新体系的生力军，研究生是高等教育质量和国际竞争力的直接体现。而研究生教育作为高等教育的最高层次, 其发展水平可以表明一个国家的教育水平、科技水平和人才水平, 同时, 也可以表明一个国家未来发展的实力和可能性。中国科技论文在国际上的较低被引用概率，是否可以从研究生的培养寻找原因呢？</p>
+
+<p>刘昶教授本人曾在法国攻读硕博，当谈到中外研究生培养的差距时，他说：“在研究方向这方面，中国是学生问老师我们要研究什么。而在法国，导师会问你想研究什么，不知道的话会先让你去看书，看完书确定自己想要研究的东西之后再开始学习，直到现在依然如此。法国公立大学，一年下来75%的学生留下，25%的学生会被淘汰。”</p>
+
+<p>在美国，研究生教育评估包括内部评估和外部评估，评价主体主要包括高校、政府和社会等参与者。在评价标准和指标上, 还会根据不同专业、学科的特点对不同层次、类型的研究生设计具有差异化的评估标准。在日本，研究生教育的“产官学”一体化模式，通过培养研究生的创造力、知识迁移、知识应用能力和国际化能力以提高日本的国际竞争力。</p>
+
+<p>硕博士的培养是一个长期而持续的过程，学校的培养模式、学术环境对学生的个人发展、研究成果有着重要的影响。我国科研能力的提高，需要更有效、更符合我国国情的培养机制。</p>
+
+<p>其实，单从研究生毕业论文被引情况一方面来看，我国研究生的水平是在不断上升的。陈学好教授认为，虽然欧美国家的底蕴积累较为丰富，但是近些年国内外的差距在缩小。留学归来的学者越来越多，带来了活跃的学术思想。同时中国的科研经费在增多，实验室等平台也不断建设，不少领域的中心已经渐渐从国外转移到中国，我国的科研潜力不容小觑。</p>
+
+<p>2019年4月2日，教育部公开该年部门预算，拟拨款800万，用于抽检约6000篇学位论文篇（不含军队系统）。年初明星学术造假的新闻，暴露出学术不端的不良风气，加强抽检工作是国家加强研究生教育质量保证和监督体系的一大措施，可以看出国家对高等教育的重视。当然，在还学术界一片净土的同时，我们也应该期待这片沃土上能成长出更多丰富扎实、能传布全球的知识种子。</p>
+
+<p>4月22日12：00，李海龙即将提交自己毕业论文的终审版，他关闭电脑，长舒一口气，这篇论文将去向哪里，发挥着怎样的作用呢（结尾需要在主人公答辩后进行采访修改，进行场景化的描述，与开头相呼应）</p>
+
+</div>
+
+<div></div>
+</body>
+<script type="application/javascript">
+			
+//滚动代码
+var controller = new ScrollMagic.Controller();
+var scene1 = new ScrollMagic.Scene({
+  triggerElement: '.control', 
+  duration:2000 // pin the element for a total of 400px
+})
+.setPin('#tu') 
+.addTo(controller);
+
+
+var scene2 = new ScrollMagic.Scene({
+  triggerElement: '.control2', 
+  duration: 1300 // pin the element for a total of 400px
+})
+.setPin('#tu2') 
+.addTo(controller);
+
+
+
+d3.csv("shenshenqianqian.csv", function(error, data){
+    if (error) throw error;
+    console.log(data);
+   
+   
+   var tooltip = d3.select("body")
+                        .append("div")
+                        .attr("class", "tooltip");
+    var matrix = [];
+	var differentcolor = [1,153048] ;
+    data.forEach(function(d,i){
+      d.a2018 = +d.a2018;
+	  d.a2017 = +d.a2017;
+	  d.a2016 = +d.a2016;
+	  d.a2015 = +d.a2015;
+	  d.a2014 = +d.a2014;
+	  d.a2013 = +d.a2013;
+	  d.a2012 = +d.a2012;
+	  d.a2011 = +d.a2011;
+	  d.a2010 = +d.a2010;
+	  d.a2009 = +d.a2009;
+	  d.a2008 = +d.a2008;
+	  d.a2007 = +d.a2007;
+	  d.a2006 = +d.a2006;
+	  d.a2005 = +d.a2005;
+	  d.a2004 = +d.a2004;
+	  d.a2003 = +d.a2003;
+	  d.a2002 = +d.a2002;
+	  d.a2001 = +d.a2001;
+	  d.a2000 = +d.a2000;
+	  d.a1999 = +d.a1999;
+	  d.a1998 = +d.a1998;
+	  d.a1997 = +d.a1997;
+	  d.a1996 = +d.a1996;
+	  d.a1995 = +d.a1995;
+	  d.a1994 = +d.a1994;
+	  d.a2019 = +d.a2019;
+	 
+	  
+      matrix.push([d.a1994,d.a1995,d.a1996,d.a1997,d.a1998,d.a1999,d.a2000,d.a2001,d.a2002,d.a2003,d.a2004,d.a2005,d.a2006,d.a2007,d.a2008,d.a2009,d.a2010,d.a2011,d.a2012,d.a2013,d.a2014,d.a2015,d.a2016,d.a2017,d.a2018,d.a2019])
+	  
+
+    })
+	console.log("matrix",matrix)
+	var colorScale = d3.scaleLinear() //定义一个颜色的函数，方面后面再style中直接调用函数
+            .domain(d3.extent(differentcolor))//最大的数据和最小的数据中间的差范围是什么
+            .range(["rgba(210,167,92,0.2)", "rgba(181,117,6,1)"])//用这个颜色到那个颜色一一对应
+   
+    console.log(matrix)
+    
+    var Table = d3.select("#table");
+    var table = Table.append("table");
+    var tr = table.selectAll("tr")
+      .data(matrix)
+      .enter()
+      .append("tr");
+	
+
+    var td = tr.selectAll("td")
+      .data(function(d) { return d; })
+      .enter()
+      .append("td")
+      .text(function(d,i){ if( i == 25){return d} })
+	  .style('color', 'grey')
+	  .style("background-color", function(d,i) {
+        
+         if (i == 25){
+                return "#fef0d6" ;}//为什么一定要把i这个if放在第一个就可以实现效果呢？把他放到else if 里就不行
+		else if (d != 0){return colorScale(d)}
+		else  { return "#fef0d6"}
+            })
+	   .on("mouseover", mouseoverFunc) 
+       .on("mousemove", mousemoveFunc)
+       .on("mouseout", mouseoutFunc);
+	   
+
+		
+    //  and then, build the t-head
+    var header = table.append("thead").append("tr");
+	
+	 
+			
+			
+    var headerObjs = [ 
+            { label: "1984" },
+            { label: "1985" },
+            { label: "1986" },
+            { label: "1987"},
+            { label: "1988"},
+            { label: "1989" },
+			{ label: "1990" },
+            { label: "1991" },
+            { label: "1992" },
+            { label: "1993"},
+            { label: "1994"},
+            { label: "1995" },
+			{ label: "1996" },
+            { label: "1997" },
+            { label: "1998" },
+            { label: "1999"},
+            { label: "2010"},
+            { label: "2011" },
+			{ label: "2012" },
+            { label: "2013" },
+            { label: "2014" },
+            { label: "2015"},
+            { label: "2016"},
+            { label: "2017" },
+			{ label: "2018"},
+			
+           
+			
+          ];
+    header
+      .selectAll("th")
+      .data(headerObjs)
+      .enter()
+      .append("th")
+      .text(function(d){ return d.label; })
+	  .style('color', 'grey')
+	  .style("background-color","#fef0d6")
+    
+	
+	
+	 function mouseoverFunc(d,i) {
+            // console.log(d);
+			if (d != 0 && i != 25){
+            return tooltip
+                .style("display", null) // 区别"none": 不呈现；"null": 取消之前所有给display的属性。
+                .html("<div>" +"引用了" + d +"篇" +"</div>")
+			
+           
+			,d3.select(this).style("display", null)//,返回两个值
+		       .style("background-color","rgba(210,74,74,1)")}
+		
+		 
+       };
+
+        function mousemoveFunc(d,i) {
+            // console.log("events", window.event, d3.event);
+		 if (d != 0 && i != 25){
+            return tooltip
+                .style("top", (d3.event.pageY -15) + "px" )
+                .style("left", (d3.event.pageX + 10) + "px")
+			,d3.select(this).style("background-color","rgba(210,74,74,1)")
+		 }
+        }
+
+        function mouseoutFunc(d,i) {
+			if (d != 0 && i != 25){
+            return tooltip.style("display", "none")
+			
+			,d3.select(this).style("background-color", function(d,i) {
+                return colorScale(d)})
+        }}
+
+            })
+
+   var fullwidth = 800;
+			var fullheight = 600;
+			var margin = { top: 50, right: 190, bottom: 100, left: 80 };
+
+
+			var width = fullwidth - margin.left - margin.right;
+			var height3 = fullheight - margin.top - margin.bottom;
+
+			var timeParse = d3.timeParse("%Y");
+			var timeFormat = d3.timeFormat("%Y");
+
+			var xScale3 = d3.scaleTime()
+								.range([ 0, width]);
+
+			var yScale3 = d3.scaleLinear()
+								.range([0, height3]);
+
+			var xAxis3 = d3.axisBottom(xScale3)
+							.tickFormat(function(d) {
+								return timeFormat(d);
+							})
+							.ticks(15);
+							
+
+			var yAxis3 = d3.axisLeft(yScale3);
+
+			var svg3 = d3.select("#shuobo")
+						.append("svg")
+						.attr("width", fullwidth)
+						.attr("height", fullheight)
+						.append("g")
+						.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+			var radius = 5;
+				
+
+			var tooltip = d3.select("body")
+                        .append("div")
+                        .attr("class","tooltip");
+
+			//Load data
+			d3.csv("line-shuobo.csv", function(error, data) {
+                if (error) throw error; 
+ 
+ 			console.log(data)
+
+				var years = d3.keys(data[0]).slice(0, 11-1); 
+				
+				var dataset = [];
+
+			
+				data.forEach(function(d){
+
+					var myEmissions = [];
+
+					
+					years.forEach(function(y){
+						if (d[y]) { 
+							myEmissions.push({
+								myCountry:d.degree,
+								year: y,
+								amount: d[y]
+							})
+						}
+					})
+
+					dataset.push({
+						country: d.degree,
+						emissions: myEmissions
+					})
+				})
+
+				xScale3.domain(
+					d3.extent(years, function(d) {
+						return timeParse(d);
+					}));
+
+				yScale3.domain([
+					d3.max(dataset, function(d) {
+						return d3.max(d.emissions, function(d) {
+							return +d.amount;
+						});
+					}),
+					d3.min(dataset, function(d) {
+						return d3.min(d.emissions, function(d) {
+							return +d.amount;
+						});
+					})
+				])
+				.nice()
+				.ticks(3);
+				
+				var groups = svg3.selectAll("g")
+					.data(dataset)
+					.enter()
+					.append("g");
+
+				groups.append("text")
+					.attr("x", function(d) {
+						if (d.emissions.length != 0) {
+					  	var lastYear = d.emissions[d.emissions.length-1].year;
+					  	return xScale3(timeParse(lastYear));
+					  }
+					})
+					.attr("y", function(d) {
+						if (d.emissions.length != 0) {
+					  	var lastAmount = d.emissions[d.emissions.length-1].amount;
+					  	return yScale3(lastAmount);
+						}
+					})
+					.attr("dx", "7px")
+					.attr("dy", "4px")
+					.text(function(d) {
+						if (d.emissions.length != 0) {
+							var lastAmount = d.emissions[d.emissions.length-1].amount;
+							if (+lastAmount == 93.1) {
+								return "博士";
+							}
+							else if(+lastAmount == 40.4) {
+								return "硕士";
+						    }
+					}})
+					.attr("class", "linelabel");
+	
+				
+				groups.on("mouseover", mouseoverGroup)
+					  .on("mouseout", mouseoutGroup)
+
+              //4. circles on lines
+				
+				
+				var circles3 = groups.selectAll(".circles3")
+					.data(function(d) { 
+								return d.emissions; 
+					})
+					.enter()
+					.append("circle");
+
+
+				circles3
+					.attr("cx", function(d) {
+						return xScale3(timeParse(d.year));
+					})
+					.attr("cy", function(d) {
+						return yScale3(d.amount);
+					})
+					.attr("r", radius)
+					// .attr("fill",function(d) {
+					// 	if(d.myCountry =="博士"){
+					// 	return "#f5ce93"}
+					// 	else if (d.myCountry =="硕士"){
+					// 		"#f5ce93"}
+					// })
+					.attr("fill","#f5ce93")
+					.attr("opacity", 1)
+					.attr("class","circle3");
+                
+
+				circles3
+					.on("mouseover", mouseoverCircle)
+					.on("mousemove", mousemoveCircle)
+					.on("mouseout",	mouseoutCircle);
+
+				var rects3 = groups.selectAll("rect")
+					.data(function(d) { 
+								return d.emissions; 
+					})
+					.enter()
+					.append("rect");
+
+				rects3.attr("x", function(d) {
+						return xScale3(timeParse(d.year))-2;
+					})
+					.attr("y", function(d) {
+						if(d.myCountry =="博士"){
+						return yScale3(d.amount);}
+						else{
+							return 0}
+					})
+					.attr("class","rect1")
+					.attr("width", function(d) {
+						if(d.myCountry =="博士"){
+						return 4}
+						else{
+							return 0}
+					})
+					.attr("height",function(d){
+						if(d.year=="2009"){
+							return yScale3(81.7)}
+							 else if(d.year=="2010"){
+							return yScale3(77.5)}
+							 else if(d.year=="2011"){
+							return yScale3(74.1)}
+							 else if(d.year=="2012"){
+							return yScale3(70.5)}
+							 else if(d.year=="2013"){
+							return yScale3(69.1)}
+							 else if(d.year=="2014"){
+							return yScale3(63.3)}
+							 else if(d.year=="2015"){
+							return yScale3(59.2)}
+							 else if(d.year=="2016"){
+							return yScale3(53.9)}
+							 else if(d.year=="2017"){
+							return yScale3(52.2)}
+							 else if(d.year=="2018"){
+							return yScale3(47.3)}
+						}
+					)
+					.attr("fill","#a1a3a6")
+
+				// 轴们
+				svg3.append("g")
+					.attr("class", "x axis")
+					.attr("transform", "translate(0," + height3 + ")")
+					.call(xAxis3);
+
+				svg3.append("g")
+					.attr("class", "y axis")
+					.call(yAxis3);
+
+				svg3.append("text")
+                 	.attr("class", "yTitle")
+	                .attr("transform", "translate(0,-5)")
+	                .style("text-anchor", "middle")
+	                .attr("dy", "-10")
+	                .text("被引用概率（%）");
+
+            	svg3.append("text")
+	                .attr("class", "xTitle")
+	                .attr("transform", "translate(560,470)")
+	                .style("text-anchor", "middle")
+	                .attr("dy", "-10")
+	                .text("年份");
+
+				      var focus = svg3.append("g")
+			          .attr("class", "focus")
+
+			    //3.2. mouseover on groups:
+	
+			function mouseoverGroup(d){
+				// the "this" is the g parent node.  That means we can select it, and then select
+				// the child nodes and style them as we want for the hover effect!
+				d3.select(this).select("path").attr("id", "focused"); // overrides the class
+				d3.select(this).select("text").classed("hidden", false);  // show it if "hidden"
+				d3.select(this).select("text").classed("bolder", true);
+			}
+
+			function mouseoutGroup(d){
+				d3.select(this).select("path").attr("id", null); // remove the focus style
+				d3.select(this).select("text").classed("bolder", false); // remove the bolding on label
+			}
+
+//4.2. mouseover on circles:
+
+			function mouseoverCircle(d) {
+
+				d3.select(this)
+					.transition()
+					.style("opacity", 1)
+					.attr("fill","#bc944f")
+					.attr("r", radius * 1.5);
+
+
+				tooltip
+					.style("display", null) 
+					.html(
+						"<p>" + d.myCountry +
+						"<br>年份: " + d.year +
+						"<br>被引用概率：" + d.amount+ "%</p>"
+						);
+			}
+
+			function mousemoveCircle(d) {
+				tooltip
+					.style("top", (d3.event.pageY - 10) + "px" )
+					.style("left", (d3.event.pageX + 10) + "px");
+				}
+
+			function mouseoutCircle(d) {
+				d3.select(this)
+					.transition()
+					.attr("fill","#f5ce93")
+					.attr("opacity", 1)
+					.attr("r", 5);
+
+				d3.selectAll("path.line").classed("unfocused", true).classed("focused", false);
+
+		    	tooltip.style("display", "none");  
+		    }
+
+			});
+
+
+
+</script>
+
+</body>
+
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.1.0/d3.js"></script>
+    <!-- jquery线上lib -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <!-- js scripts -->
+    <script type="text/javascript" src="js2/prep.js"></script>
+    <script type="text/javascript" src="js2/main.js"></script>
+    <script type="text/javascript" src="js2/scroll.js"></script>
+	
+</html>
+
