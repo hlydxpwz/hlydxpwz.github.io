@@ -1,0 +1,362 @@
+body {
+				margin:0;
+
+				background-color:rgba(244,206,147,0.3);
+				font-family: Helvetica, Arial, sans-serif;
+}
+	
+.one {
+	height:270%;
+	margin:0;
+	background-color:#fff9f0;}
+
+.two {overflow:auto;
+width:98vw;
+margin:0;
+padding:0;
+}
+
+.three{
+margin:0 ;
+	width:98vw;
+}
+#tu2{
+	float:left;
+    margin-left:8vw; }
+#tu3{
+	margin-top: 5vh;
+}
+.four {
+overflow:auto;
+width:98vw;
+margin:0;
+margin-top: 10%;
+}
+.five{
+	padding-top:5%;}
+.six{
+	overflow:auto;}
+.kuang{
+	width:85%;
+	border:rgba(255,255,255,1) 4px solid;
+	border-top:0;
+	margin:0 auto;
+	background-color:#fff9f0;
+	
+	}	
+.front {
+	float:right;
+	width:30vw;
+    position:relative;
+	
+	}
+#front5,#front10{
+	margin-bottom:0vh;}
+#front6{
+	margin-bottom:80vh;
+    height: 32vh;}
+#front8{
+	margin-bottom:80vh;
+    height: 18vh;}		
+
+#front5{
+	height:22vh}
+#front2{
+	height: 13vh;
+	}
+#front10{
+	height: 21vh;
+	}
+#front7{
+	height: 54vh;
+	margin-bottom:10vh;
+	}
+.back {
+	margin-left:7vw;
+	position:relative;
+
+	}
+/*#tu2{
+	z-index:1;}*/
+
+.front p {
+	padding:3% 6%;}	
+
+.front_container{
+	height:17vh;
+	background-color:rgba(254,240,215,0.9);
+	float:right;
+	margin-bottom:63vh;
+	margin-top:10vh;
+	width:30vw;
+	margin-right:25vw;
+
+ }
+	 
+.zhexianyuan{
+	z-index: 100;
+}
+.line1,.line2{
+	z-index: -1;
+}
+.linename{
+	font-size: 12px;
+}
+circle:hover {
+				 cursor: pointer;
+			}
+
+.control  {
+	margin-top:15vh;
+	}
+.control2 {
+	margin-top:10vh;
+	 }
+.control3 {
+	margin-top:0vh;
+	 }
+
+.title1{
+	font-size: 12px;
+	color: grey;
+}
+
+
+.juzhong {
+	width:55%;
+	margin:0 auto;
+}
+
+p {
+			font-size: 15px;
+			font-family:'微软雅黑';
+            line-height:190%;
+            letter-spacing: 0.5px;
+            text-align:justify;
+            color: #403a30;
+            margin-bottom: 3%;
+           
+		}
+
+/*path.line {
+	fill: none;
+	stroke: #a1a3a6;
+	stroke-width: 2px;
+}*/
+
+.axis path,
+.axis line {
+	fill: none;
+	stroke: #b2b2b2;
+	stroke-width: 1px;
+	
+}
+
+.axis text {
+	font-family: sans-serif;
+	font-size: 10px;
+	/*fill:#b2b2b2;;*/
+}
+
+text.linelabel {
+	font-size: 12pt;
+	fill: #000;
+}
+
+.overlay {
+  fill: none;
+  pointer-events: all;
+}
+
+.circle3{
+	z-index: 8;
+}
+
+/*.xTitle{
+  fill:#b2b2b2;
+}
+
+.yTitle{
+	fill:#b2b2b2;
+}*/
+
+circle, path:hover {
+	cursor: pointer;
+}
+
+text.hidden {
+	display: none;
+}
+
+text.bolder {
+	font-weight: bolder;
+}
+
+.tooltip{
+	position:absolute;
+	z-index: 10;
+}
+
+.tooltip p{
+	background-color: white;
+	color:grey;
+	border:grey 1px solid;
+	padding:2px;
+}
+
+.rect1{
+	z-index: -1;
+}
+
+.circle{
+	z-index: 9;
+}
+
+
+table {
+border-spacing: 0px;
+font-family: 'Roboto Condensed', serif;
+margin: 5px;
+background-color:#fff9f0;
+width:40vw;
+height:40vh;
+margin-left: 8vw;
+margin-top: 0;
+margin-bottom: 10vh;
+}
+
+
+#table {
+	margin-right:0px;
+	float:left;
+	margin-left:10vw;
+	}
+#table p {
+	margin:0 auto;
+	padding:0 auto;
+    font-size: 12px;
+    text-align: center;
+    margin-bottom: 1vh;
+
+    }
+	
+#tablezhou {
+	float:left;
+	width:3vw;
+	margin-top:140px;
+	margin-left:1vw;
+}
+#tablezhou p {
+	margin:0 auto;
+	padding:0 auto;
+    font-size: 12px;
+    line-height: 120%;
+    }
+
+th, td {
+cursor: pointer;
+padding: 1px;
+text-align: center;
+height:4%;
+width:4%;
+background-color:rgba(255,255,255,1);
+font-weight:bold;
+font-size: 10px;
+}
+
+.intro{
+margin-top: 30px;
+
+}
+
+.selected {
+background-color:rgba(51,51,51,1);}
+
+
+
+path.line {
+				fill: none;
+				stroke-width: 2px;
+			}
+
+#focused {
+				stroke:#bc944f;
+				stroke-width: 3.5px;
+			}
+
+			
+
+text.hidden {
+	display: none;
+}
+
+text.bolder {
+	font-weight: bolder;
+}
+
+.tooltip{
+	position:absolute;
+	z-index: 10;
+}
+
+.tooltip p{
+	background-color: white;
+	color:grey;
+	border:grey 1px solid;
+	padding:2px;
+	font-size: 12px;
+}
+
+#list{
+
+	color:#403a30;
+	margin:0 auto;
+	width:60vw;}
+
+
+#chart{
+	width:50vw;
+	margin:0 auto;
+}
+.interpret{
+	margin:0 auto;
+}
+#list div div {
+	margin-top:10px;
+	font-size:12px;
+	line-height:160%;
+	/*border: #555 1px solid;*/
+	padding-top:10px;
+	padding-bottom:10px;
+	padding-left:50px;
+	float:left;
+	width:16vw;
+	height:180px;
+	}
+span{
+		display: inline;
+    background-color: rgb(254,240,215);
+    box-shadow: 6px 0px 0 rgb(254,240,215), -6px 0 0 rgb(254,240,215);
+	}
+#list div{
+	margin:0 auto;
+	overflow:auto;
+	width:60vw;
+	}
+.xTitle{
+  font-family: sans-serif;
+	font-size: 12px;
+}
+
+.yTitle{
+	font-family: sans-serif;
+	font-size: 12px;
+}
+		
+@media screen and (min-width: 800px){
+
+}
+
+@media screen and (min-width: 1500px){
+
+}
