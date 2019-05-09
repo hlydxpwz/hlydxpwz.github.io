@@ -1,14 +1,24 @@
 
       var screen = $(".kuang").width()
+      var windows = $(window).width()
 
 
    /*  var fullWidth = 500;
 		var fullHeight = 450;
 		var margin = {top:90, right:60, bottom:50, left:60}; */
 		
-		var fullWidth = screen*0.42
-		var fullHeight = screen*0.38
-		var margin = {top:screen*0.06, right:screen*0.07, bottom:screen*0.05, left:screen*0.07};
+    if (windows > 800){
+			    var fullWidth = screen*0.42
+			    var fullHeight = screen*0.38
+				var margin = {top:screen*0.06, right:screen*0.07, bottom:screen*0.05, left:screen*0.07};
+		    }else{
+			    var fullWidth = screen*0.8
+				var fullHeight = screen*0.9
+				var margin = {top:screen*0.2, right:screen*0.05, bottom:screen*0.05, left:screen*0.05};
+		    }
+
+
+		
 		
 		var width = fullWidth - margin.left - margin.right;
 		var height = fullHeight - margin.top - margin.bottom;
@@ -96,9 +106,18 @@ function changeSection(n){
 eightlines()
 			
 function eightlines() {
-			var fullwidth = screen*0.6
-		var fullheight = screen*0.38
-		var margin = {top:screen*0.06, right:screen*0.15, bottom:screen*0.05, left:screen*0.05};
+
+	 if (windows > 800){
+			    var fullwidth = screen*0.54
+				var fullheight = screen*0.38
+				var margin = {top:70, right:80, bottom:70, left:70};
+		    }else{
+			    var fullwidth = screen
+				var fullheight = screen*0.9
+				var margin = {top:screen*0.2, right:screen*0.23, bottom:screen*0.05, left:screen*0.15};
+		    }
+
+			
 
 			var width = fullwidth - margin.left - margin.right;
 			var height = fullheight - margin.top - margin.bottom;
@@ -351,11 +370,12 @@ function eightlines() {
 	                .text("被引用概率（%）");
 
             	svg.append("text")
-	                .attr("class", "xTitle")
-	                .attr("transform", "translate(462,315)")
-	                .style("text-anchor", "middle")
-	                .attr("dy", "-10")
-	                .text("年份");
+                .attr("class", "xTitle")
+                .attr("transform", "translate(" + (width+30) + " ," +
+								(height+25) + ")")
+                .style("text-anchor", "middle")
+                .attr("dy", "-10")
+                .text("年份");
 
 				      var focus = svg.append("g")
 			          .attr("class", "focus")
@@ -467,9 +487,19 @@ function eightlines() {
 
 
 // 硕博
-var fullwidth = screen*0.9
-		var fullheight = screen*0.38
-		var margin = {top:screen*0.06, right:screen*0.22, bottom:screen*0.05, left:screen*0.3};
+	 if (windows > 800){
+				    var fullwidth = screen*0.9
+					var fullheight = screen*0.38
+					var margin = {top:70, right:screen*0.22, bottom:70, left:screen*0.3};
+			    }else{
+				    var fullwidth = screen
+					var fullheight = screen*0.9
+					var margin = {top:screen*0.2, right:screen*0.15, bottom:screen*0.05, left:screen*0.15};
+			    }
+
+
+
+		
 
 
 			var width = fullwidth - margin.left - margin.right;
@@ -712,7 +742,8 @@ var fullwidth = screen*0.9
 
             	svg3.append("text")
 	                .attr("class", "xTitle")
-	                .attr("transform", "translate(437,317)")
+	                .attr("transform", "translate(" + (width+30) + " ," +
+								(height+47) + ")")
 	                .style("text-anchor", "middle")
 	                .attr("dy", "-10")
 	                .text("年份");

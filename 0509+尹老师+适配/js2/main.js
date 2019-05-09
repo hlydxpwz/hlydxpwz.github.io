@@ -511,7 +511,8 @@ d3.csv("zhexian.csv", function(error, data) {
            svg2.append("text")
                 .attr("class", "xTitle")
             svg2.select(".xTitle")
-                .attr("transform", "translate(333,315)")
+               .attr("transform", "translate(" + (width-68) + " ," +
+								(height+25) + ")")
                 .style("text-anchor", "middle")
                 .attr("dy", "-10")
                 .text("年份");
@@ -529,7 +530,7 @@ d3.csv("zhexian.csv", function(error, data) {
             	.attr("class","yTitle")
             	.attr("id","yTitle2")
             svg2.select("#yTitle2")	
-					.attr("transform", "translate(" + (width / 2) + " ," +
+					.attr("transform", "translate(" + ((width / 2)-35) + " ," +
 								(height+45) + ")")
 					.style("text-anchor", "middle")
 					.attr("fill","grey")					
@@ -539,7 +540,7 @@ d3.csv("zhexian.csv", function(error, data) {
 		             .attr("class","little")
 		             
 		            svg2.select(".little") 
-		     .attr("transform", "translate(" + ((width / 2)-35) + " ," +
+		     .attr("transform", "translate(" + (width / 2) + " ," +
 		        (-52)+ ")")
 		     .style("text-anchor", "middle")    
 		     .text("研究生毕业论文与期刊论文的贡献率差距巨大"); 
@@ -739,22 +740,23 @@ function main7(){
 
         svg2.append("text")
                 .attr("class", "xTitle")
-                
             svg2.select(".xTitle")
-                .attr("transform", "translate(333,315)")
+               .attr("transform", "translate(" + (width-68) + " ," +
+								(height+25) + ")")
                 .style("text-anchor", "middle")
                 .attr("dy", "-10")
                 .text("年份");
-
-        svg2.append("text")	
+				
+				
+			svg2.append("text")	
             	.attr("class","yTitle")
             	.attr("id","yTitle2")
             svg2.select("#yTitle2")	
-					.attr("transform", "translate(" + (width / 2) + " ," +
+					.attr("transform", "translate(" + ((width / 2)-35) + " ," +
 								(height+45) + ")")
 					.style("text-anchor", "middle")
 					.attr("fill","grey")					
-					.text("被引用概率*=该类论文被核心期刊引用的篇数/该年及之前四年内的发表总篇数"); 
+					.text("被引用概率*=该类论文被核心期刊引用的篇数/该年及之前四年内的发表总篇数");	
 
 			svg2.append("text") 
 			             .attr("class","little")
