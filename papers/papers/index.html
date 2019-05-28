@@ -12,6 +12,8 @@
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.1.0/d3.js"></script>
 <script src="js2/echarts.min.js"></script>
 <script src="js2/ScrollMagic.min.js"></script>
+<script src="js2/jquery-1.7.2.min.js" language="javascript"></script>
+<script src="js2/jquery.color.js" language="javascript"></script>
 
 
 </head>
@@ -135,11 +137,11 @@
 		<img src="img/6.gif" width=25% style="margin-bottom:0%;margin-left: 37.5%;margin-top: 10%" alt=""/>
 		<img src="img/title2.png" width="100%" style="margin:0 0 3% 0;" alt=""/>
 		<p>每篇论文都将经历发表、被学界发现、被引用参考、再到学术价值渐渐减弱这一过程，被引用持续的时间越长，对学术的贡献也相应更持久。和期刊论文相比，研究生毕业论文的“生命周期”有什么特点？它是否能经得起“时间考验”呢？</p>
-		<!-- <p>就2018年来说，该年所有被期刊引用的毕业论文中，2016年出版的最多，其次是2014至2015年出版的论文。</p>
+		<p>就2018年来说，该年所有被期刊引用的毕业论文中，2016年出版的最多，其次是2014至2015年出版的论文。</p>
 		<img src="img/yindao.png" width="108%">
-		<p style="margin:40px 0;">近十年，都反映出了类似的情况。</p> -->
+		<p style="margin:40px 0;">近十年，都反映出了类似的情况。</p>
 	</div>	
-<h1 style="margin-bottom: 20px;">毕业论文的生命周期并不持久</h1>
+<!-- <h1 style="margin-bottom: 20px;">毕业论文的生命周期并不持久</h1> -->
 <!-- <div class="hand" style="margin-bottom: 5%;">
 	<div class="top4">
     <img class="hands" src="img/hand.gif" />
@@ -222,7 +224,7 @@
 	<p>通过引用数据来看各学科学术贡献情况，十年来，八大学科的毕业论文被引用概率都呈现上升趋势。农业科技领域的论文引用概率保持领先，医药卫生科技最低。</p>
 		</br>
 	<h1>农业科技被引篇数少，被引用概率最高</h1>
-	<img class="gunbang" src="img/6.png" width="95%"/>
+	<img class="gunbang" src="img/6.png"/>
 			<p>值得注意的是，2018年农业科技论文的被引用篇数排在倒数第二位，但被引用概率却遥遥领先，高达67.1%。医药卫生科技毕业论文的被引用概率最低，只有31.1%。</p>
 	
 			<p>为何学科间存在巨大差异？陈学好教授认为，<span class="highlight">农学科技论文的高被引用概率与该领域的极高创新性有关，</span>毕业论文从选题开始就要创新，以推动学科进步为任务，比起更注重回顾历史、整理文献的学科，或许有了更大的被引用可能。</p >
@@ -456,22 +458,22 @@ d3.csv("shenshenqianqian.csv", function(error, data){
       .append("td")
       .attr("class","tds")
       .text(function(d,i){ if( i == 25){return d} })
-   .style('color', function(d){
-    if (d == 2009 || d == 2012 || d == 2015 || d == 2018 ){
-     return "black";
-    }
-    else{
-     return "rgba(0,0,0,0)";
-    }
-   })
-   .style("background-color", function(d,i) {
+	  .style('color', function(d){
+	  	if (d == 2009 || d == 2012 || d == 2015 || d == 2018 ){
+	  		return "black";
+	  	}
+	  	else{
+	  		return "rgba(0,0,0,0)";
+	  	}
+	  })
+	  .style("background-color", function(d,i) {
         
          if (i == 25){
                 return "#fff9f0" ;}//为什么一定要把i这个if放在第一个就可以实现效果呢？把他放到else if 里就不行
-  else if (d != 0){return colorScale(d)}
-  else  { return "#fff9f0"}
+		else if (d != 0){return colorScale(d)}
+		else  { return "#fff9f0"}
             })
-    .on("mouseover", mouseoverFunc) 
+	   .on("mouseover", mouseoverFunc) 
        .on("mousemove", mousemoveFunc)
        .on("mouseout", mouseoutFunc);
 	   

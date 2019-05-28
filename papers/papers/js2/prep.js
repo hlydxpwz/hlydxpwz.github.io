@@ -144,7 +144,7 @@ function eightlines() {
 		    var voronoi = d3.voronoi()
 			    .x(function(d) { return xScale(timeParse(d.year)); })
 		        .y(function(d) { return yScale(+d.amount); })
-		        .extent([[0, 0], [width, height]]);
+		        .extent([[-margin.left, -margin.top], [width + margin.right, height + margin.bottom]]);
 
 			var line = d3.line()
 				.curve(d3.curveCardinal)
@@ -418,17 +418,17 @@ function eightlines() {
 				
 			
 
-			 // var tooltip = svg.append("g")
-    //   		    .attr("transform", "translate(-100,-100)")
-    //   			.attr("class", "tooltip");
+			 var tooltip = svg.append("g")
+      		    .attr("transform", "translate(-100,-100)")
+      			.attr("class", "tooltip");
 
-		  //       tooltip.append("circle")
-		  //       .attr("r", 3.5)
-		  //       .attr("fill","#f5ce93");
+		        tooltip.append("circle")
+		        .attr("r", 3.5)
+		        .attr("fill","#f5ce93");
 
-    //             tooltip.append("text")
-    //             .attr("y", -10)
-    //             .attr("color","orange");
+                tooltip.append("text")
+                .attr("y", -10)
+                .attr("color","orange");
 
 
 			var voronoiGroup = svg.append("g")
@@ -441,19 +441,21 @@ function eightlines() {
     				.enter()
     				.append("path")
   					.attr("d", function(d) { return d ? "M" + d.join("L") + "Z" : null; })
-  
       				.on("mouseover", mouseover)
-      				.on("mousemove", mousemove)
       				.on("mouseout", mouseout)
       				.on("click",clickLine);
       		
+
+		    d3.select("#show-voronoi")
+      	      .property("disabled", false)
+              .on("change", function() { voronoiGroup.classed("voronoi-show", this.checked); });
 
 var interpret = d3.select("#list")
          .append("div")
          .attr("class", "interpret");
          
     interpret
-                .html("<div>"+"<span class=\"sss\">"+"哲学与人文科学"+"</span>"+"</br></br>"+"<span>"+"第一名："+"</span>"+"</br>"+
+                .html("<div>"+"<span class=\"sss\">"+"哲学与人文科学前三名"+"</span>"+"</br></br>"+"第一名："+"</br>"+
         "《"+"学习自我效能感量表的编制与应用"+"》"+"</br>"+
          "作者："+"边玉芳"+"</br>"+
          "学位："+"博士"+"</br>"+
@@ -461,7 +463,7 @@ var interpret = d3.select("#list")
          "出版年份："+"2003"+"</br>"+
          "被引次数："+"515"+"</br>"+
          "</div>"+
-         "<div>"+"</br></br>"+"<span>"+"第二名："+"</span>"+"</br>"+
+         "<div>"+"</br></br>"+"第二名："+"</br>"+
         "《"+"心理学视野中的幸福"+"》"+"</br>"+
          "作者："+"苗元江"+"</br>"+
          "学位："+"博士"+"</br>"+
@@ -469,7 +471,7 @@ var interpret = d3.select("#list")
          "出版年份："+"2003"+"</br>"+
          "被引次数："+"410"+"</br>"+
          "</div>"+
-         "<div>"+"</br></br>"+"<span>"+"第三名："+"</span>"+"</br>"+
+         "<div>"+"</br></br>"+"第三名："+"</br>"+
         "《"+"大学生适应性量表的编制与标准化"+"》"+"</br>"+
          "作者："+"卢谢峰"+"</br>"+
          "学位："+"硕士"+"</br>"+
@@ -492,7 +494,7 @@ var interpret = d3.select("#list")
 									
 				interpret
                 .style("display", null) // 区别"none": 不呈现；"null": 取消之前所有给display的属性。
-               .html("<div>"+"<span class=\"sss\">"+d.data.country+"</span>"+"</br></br>"+"<span>"+"第一名："+"</span>"+"</br>"+
+               .html("<div>"+"<span class=\"sss\">"+d.data.country+"前三名"+"</span>"+"</br></br>"+"第一名："+"</br>"+
 								"《"+d.data.no1+"》"+"</br>"+
 									"作者："+d.data.author1+"</br>"+
 									"学位："+d.data.degree1+"</br>"+
@@ -500,7 +502,7 @@ var interpret = d3.select("#list")
 									"出版年份："+d.data.year1+"</br>"+
 									"被引次数："+d.data.citation1+"</br>"+
 									"</div>"+
-									"<div>"+"</br></br>"+"<span>"+"第二名："+"</span>"+"</br>"+
+									"<div>"+"</br></br>"+"第二名："+"</br>"+
 								"《"+d.data.no2+"》"+"</br>"+
 									"作者："+d.data.author2+"</br>"+
 									"学位："+d.data.degree2+"</br>"+
@@ -508,7 +510,7 @@ var interpret = d3.select("#list")
 									"出版年份："+d.data.year2+"</br>"+
 									"被引次数："+d.data.citation2+"</br>"+
 									"</span>"+"</div>"+
-									"<div>"+"</br></br>"+"<span>"+"第三名："+"</span>"+"</br>"+
+									"<div>"+"</br></br>"+"第三名："+"</br>"+
 								"《"+d.data.no3+"》"+"</br>"+
 									"作者："+d.data.author3+"</br>"+
 									"学位："+d.data.degree3+"</br>"+
@@ -524,24 +526,52 @@ var interpret = d3.select("#list")
 
              function mouseover(d) {
   			// console.log(d);
-    		tooltip
-					.style("display", null) 
-					.html("<p>" + d.data.year + "年" + d.data.country +"论文的被引用概率为"+ d.data.amount + "%</p>");
-    		
+    		d3.select(d.data.line).attr("id", "tooltiped");
+    		// d.data.line.parentNode.appendChild(d.data.line);
+    		tooltip.attr("transform", "translate(" + xScale(timeParse(d.data.year)) + "," + yScale(+d.data.amount) + ")");
+    		tooltip.style("font-size","12px")
+    		tooltip.select("text").text(d.data.year + "年" + d.data.country +"论文的被引用概率为"+ d.data.amount + "%");
+
+   //  		var line1 = d3.line()
+   //                   .x(function(d){
+   //                      return xScale(d.data.year);
+   //                   })
+   //                   .y(function(d){
+   //                      return yScale(0);
+   //                   }); 
+			// var line2 = d3.line()
+   //                   .x(function(d){
+   //                      return xScale(0);
+   //                   })
+   //                   .y(function(d){
+   //                      return yScale(d.data.country);
+   //                   });
+
+   //          svg.datum(data)
+		 //               .append("path")
+		 //               .transition()
+			// 		   .duration(800)
+			// 		   .delay(1200)
+		 //               .attr("d",line1)
+		 //               .attr("fill","none")
+		 //               .attr("stroke","rgba(153,153,153,0.8)")
+		 //               .attr("stroke-width",0.9);
+					   
+			// svg.datum(data)
+		 //               .append("path")
+		 //               .transition()
+			// 		   .duration(500)
+			// 		   .delay(1200)
+		 //               .attr("d",line2)
+		 //               .attr("fill","none")
+		 //               .attr("stroke","rgba(153,153,153,0.8)")
+		 //               .attr("stroke-width",0.9)
+
     	    };
-            
-            function mousemove(d) {
-				tooltip
-					.style("top", (d3.event.pageY - 10) + "px" )
-					.style("left", (d3.event.pageX + 10) + "px");
-			}
 
 		    function mouseout(d) {
-    		d3.selectAll("path.line")
-    		// .classed("focus", false)
-    		// .classed("unfocus", true);
-
-				tooltip.style("display", "none");  
+    		d3.select(d.line).attr("id", null);
+    		tooltip.attr("transform", "translate(-100,-100)");
   			};
 
 			
@@ -952,7 +982,7 @@ var interpret = d3.select("#list")
 	 if (windows > 800){
 				    var fullwidth = screen*0.8
 					var fullheight = screen*0.38
-					var margin = {top:40, right:screen*0.15, bottom:70, left:screen*0.34};
+					var margin = {top:40, right:screen*0.17, bottom:70, left:screen*0.32};
 			    }else{
 				    var fullwidth = screen
 					var fullheight = screen*0.9
@@ -1209,7 +1239,7 @@ var interpret = d3.select("#list")
 	                .attr("class", "xTitle")
 	                .attr("transform",function(d){
                 					if(screen>800){return "translate(" + (width+32) + " ," +
-								height*1.08  + ")" }
+								(height-5)  + ")" }
                 					 else {return "translate(" + (width/2) + " ," +
 								(fullheight*0.85) + ")"}
                 } )
@@ -1307,3 +1337,22 @@ var interpret = d3.select("#list")
 		    }
 
 			});
+
+
+var highlightFlag = [0,0,0]
+	$(document).scroll(function(){			
+		   
+			var top = $(document).scrollTop()
+			
+			/* 高亮说明文字 */
+			for(var i=0; i<highlightFlag.length; i++){
+				
+				var highlight = $(document).find(".highlight").eq(i).offset().top
+				if(top>highlight-$(window).height()*0.5){				
+					if(highlightFlag[i]==0){
+						$(document).find(".highlight").eq(i).animate({backgroundColor:'#ffe400'},1000)
+						highlightFlag[i]=1;
+					}
+				} 
+			}
+	})
